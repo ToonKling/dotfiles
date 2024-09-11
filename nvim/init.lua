@@ -546,36 +546,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
-        jdtls = {
-          settings = {
-            java = {
-              signatureHelp = { enabled = true },
-              completion = {
-                favoriteStaticMembers = {},
-                filteredTypes = {
-                  -- "com.sun.*",
-                  -- "io.micrometer.shaded.*",
-                  -- "java.awt.*",
-                  -- "jdk.*",
-                  -- "sun.*",
-                },
-              },
-              sources = {
-                organizeImports = {
-                  starThreshold = 9999,
-                  staticStarThreshold = 9999,
-                },
-              },
-              codeGeneration = {
-                toString = {
-                  template = '${object.className}{${member.name()}=${member.value}, ${otherMembers}}',
-                },
-                useBlocks = true,
-              },
-              configuration = {},
-            },
-          },
-        },
         --
 
         lua_ls = {
