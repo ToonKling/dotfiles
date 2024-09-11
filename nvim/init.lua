@@ -574,6 +574,7 @@ require('lazy').setup({
             },
           },
         },
+        coq_lsp = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -608,6 +609,11 @@ require('lazy').setup({
   },
 
   { 'mfussenegger/nvim-jdtls' },
+  { 'mfussenegger/nvim-dap' },
+  { 'nvim-neotest/nvim-nio' },
+
+  { 'whonore/Coqtail' },
+  { 'tomtomjhj/coq-lsp.nvim' },
 
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -845,6 +851,11 @@ require('lazy').setup({
     },
   },
 })
+
+-- Coq setup
+vim.g.loaded_coqtail = 1
+vim.g['coqtail#supported'] = 0
+require('coq-lsp').setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
