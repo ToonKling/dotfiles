@@ -190,6 +190,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', 'C-R', '<cmd>sp<CR><cmd>term python %<CR>', { desc = 'Run python file in current terminal' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -574,7 +576,6 @@ require('lazy').setup({
             },
           },
         },
-        coq_lsp = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -785,6 +786,13 @@ require('lazy').setup({
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+
+  -- haskell shit, move somewhere else
+  {
+    'mrcjkb/haskell-tools.nvim',
+    version = '^5', -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 
   { -- Highlight, edit, and navigate code
